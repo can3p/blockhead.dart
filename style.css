@@ -1,0 +1,60 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.field-container {
+	overflow: hidden;
+}
+
+.field-cell {
+	border: 1px solid #444;
+	margin: 1px;
+	width: 48px;
+	height: 48px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	font-size: 50px;
+	font-variant: small-caps;
+	cursor: pointer;
+}
+
+.field-hoverable:hover {
+	background-color: #ece2ff;
+}
+
+.field-selected {
+	background-color: #ffd5d5 !important;
+}
+
+.field-new {
+	color: #F00 !important;
+	border-color: #F00 !important;
+}
+
+.field-cell-newrow {
+	clear: left;
+}
+
+.field-selectedword {
+	display: none;
+	text-align: center;
+	line-height: 40px;
+	font-size: 50px;
+	width: 250px;
+	color: #4fe05b;
+	font-variant: small-caps;
+	margin-top: 15px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.field-selectedword-incorrect {
+	color: #F00;
+	cursor: default;
+	text-decoration: none;
+}
+
+.container-selectword .field-selectedword {
+	display: block;
+}
