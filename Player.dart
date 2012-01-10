@@ -41,6 +41,10 @@ class Player {
     container.classes.add('player-noscore');
   }
   
+  bool hasWord(String word) {
+    return words.indexOf(word) >= 0;
+  }
+  
   int calcScore() {
     int score = 0;
     words.forEach((word) => score += word.length);

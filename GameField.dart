@@ -196,6 +196,7 @@ class GameField {
     newFilled.forEach((cell) {
       getAdjacentCells(cell)
         .filter(hoverableFilter)
+        .filter((cell) => cell.innerHTML.length == 0)
         .forEach((Element el) => el.classes.add(hoverableClass));
     });
   }
