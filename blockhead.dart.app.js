@@ -646,6 +646,7 @@ function native_MathNatives_parseInt(str) {
   if (math$INT_REGEXP.test(str)) return +str;
   throw native_MathNatives__newBadNumberFormat(str);
 }
+function native_MathNatives_random() { return Math.random(); }
 function native_NumberImplementation_BIT_XOR(other) {
   "use strict";
   return this ^ other;
@@ -727,6 +728,18 @@ function native_NumberImplementation_negate() {
 function native_NumberImplementation_floor() {
   "use strict";
   return Math.floor(this);
+}
+function native_NumberImplementation_truncate() {
+  "use strict";
+  return (this < 0) ? Math.ceil(this) : Math.floor(this);
+}
+function native_NumberImplementation_isNaN() {
+  "use strict";
+  return isNaN(this);
+}
+function native_NumberImplementation_isInfinite() {
+  "use strict";
+  return (this == Infinity) || (this == -Infinity);
 }
 function native_NumberImplementation_toDouble() {
   "use strict";
@@ -2371,6 +2384,10 @@ Deserializer$Dart._jsArrayLength$$member_ = function(x){
 ;
 function MathNatives$Dart(){
 }
+MathNatives$Dart.random$member = function(){
+  return native_MathNatives_random();
+}
+;
 MathNatives$Dart.parseInt$member = function(str){
   return native_MathNatives_parseInt(str);
 }
@@ -2466,6 +2483,38 @@ Number.prototype.floor$named = function($n, $o){
   if ($o.count || $n != 0)
     $nsme();
   return Number.prototype.floor$member.call(this);
+}
+;
+Number.prototype.truncate$member = function(){
+  return native_NumberImplementation_truncate.call(this);
+}
+;
+Number.prototype.isNaN$member = function(){
+  return native_NumberImplementation_isNaN.call(this);
+}
+;
+Number.prototype.isInfinite$member = function(){
+  return native_NumberImplementation_isInfinite.call(this);
+}
+;
+Number.prototype.toInt$member = function(){
+  if (this.isNaN$member()) {
+    $Dart$ThrowException(BadNumberFormatException$Dart.BadNumberFormatException$$Factory('NaN'));
+  }
+  if (this.isInfinite$member()) {
+    $Dart$ThrowException(BadNumberFormatException$Dart.BadNumberFormatException$$Factory('Infinity'));
+  }
+  var truncated = this.truncate$member();
+  if (EQ$operator(truncated, negate$operator(0))) {
+    return 0;
+  }
+  return truncated;
+}
+;
+Number.prototype.toInt$named = function($n, $o){
+  if ($o.count || $n != 0)
+    $nsme();
+  return Number.prototype.toInt$member.call(this);
 }
 ;
 Number.prototype.toDouble$member = function(){
@@ -5581,6 +5630,10 @@ Math$Dart.parseInt$member = function(str){
   return MathNatives$Dart.parseInt$member(str);
 }
 ;
+Math$Dart.random$member = function(){
+  return MathNatives$Dart.random$member();
+}
+;
 function num$Dart(){
 }
 num$Dart.$lookupRTT = function(){
@@ -6562,9 +6615,23 @@ function native__FileWriterWrappingImplementation__get_readyState(_this) {
     throw __dom_wrap_exception(e);
   }
 }
+function native__FileWriterWrappingImplementation__truncate(_this, size) {
+  try {
+    return __dom_wrap(_this.$dom.truncate(__dom_unwrap(size)));
+  } catch (e) {
+    throw __dom_wrap_exception(e);
+  }
+}
 function native__FileWriterSyncWrappingImplementation__get_length(_this) {
   try {
     return __dom_wrap(_this.$dom.length);
+  } catch (e) {
+    throw __dom_wrap_exception(e);
+  }
+}
+function native__FileWriterSyncWrappingImplementation__truncate(_this, size) {
+  try {
+    return __dom_wrap(_this.$dom.truncate(__dom_unwrap(size)));
   } catch (e) {
     throw __dom_wrap_exception(e);
   }
@@ -24375,6 +24442,15 @@ _FileWriterSyncWrappingImplementation$Dart._get_length$$member_ = function(_this
   return native__FileWriterSyncWrappingImplementation__get_length(_this);
 }
 ;
+_FileWriterSyncWrappingImplementation$Dart.prototype.truncate$member = function(size){
+  _FileWriterSyncWrappingImplementation$Dart._truncate$$member_(this, size);
+  return;
+}
+;
+_FileWriterSyncWrappingImplementation$Dart._truncate$$member_ = function(receiver, size){
+  return native__FileWriterSyncWrappingImplementation__truncate(receiver, size);
+}
+;
 _FileWriterSyncWrappingImplementation$Dart.prototype.typeName$getter = function(){
   return 'FileWriterSync';
 }
@@ -24434,6 +24510,15 @@ _FileWriterWrappingImplementation$Dart.prototype.readyState$getter = function(){
 ;
 _FileWriterWrappingImplementation$Dart._get_readyState$$member_ = function(_this){
   return native__FileWriterWrappingImplementation__get_readyState(_this);
+}
+;
+_FileWriterWrappingImplementation$Dart.prototype.truncate$member = function(size){
+  _FileWriterWrappingImplementation$Dart._truncate$$member_(this, size);
+  return;
+}
+;
+_FileWriterWrappingImplementation$Dart._truncate$$member_ = function(receiver, size){
+  return native__FileWriterWrappingImplementation__truncate(receiver, size);
 }
 ;
 _FileWriterWrappingImplementation$Dart.prototype.typeName$getter = function(){
@@ -64534,29 +64619,55 @@ unnamedad7b21$Dict$Dart.prototype._isCorrectString$unnamedad7b21$$member_ = func
   return !JSSyntaxRegExp$Dart.JSSyntaxRegExp$$Factory('[^\u0430-\u044F]', false, true).hasMatch$named(1, $noargs, word);
 }
 ;
+function unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted(dartc_scp$0, word){
+  return EQ$operator(word.length$getter(), dartc_scp$0.size);
+}
+function unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted$named($s0, $n, $o, word){
+  if ($o.count || $n != 1)
+    $nsme();
+  return unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted($s0, word);
+}
+function unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted$named$named_$lookupRTT(){
+  return RTT.createFunction([RTT.dynamicType], RTT.dynamicType);
+}
+unnamedad7b21$Dict$Dart.prototype.getRandomWord$member = function(size){
+  var dartc_scp$0 = {size:size};
+  var filter = $bind(unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted$named, unnamedad7b21$Dict$Dart$getRandomWord$c0$23_23$Hoisted$named$named_$lookupRTT, $Dart$Null, dartc_scp$0);
+  var filtered = this.words$getter().filter$named(1, $noargs, filter);
+  var userFiltered = this.userWords$getter().filter$named(1, $noargs, filter);
+  filtered.addAll$named(1, $noargs, userFiltered);
+  return filtered.INDEX$operator(MUL$operator(Math$Dart.random$member(), SUB$operator(filtered.length$getter(), 1)).floor$named(0, $noargs).toInt$named(0, $noargs));
+}
+;
+unnamedad7b21$Dict$Dart.prototype.getRandomWord$named = function($n, $o, size){
+  if ($o.count || $n != 1)
+    $nsme();
+  return unnamedad7b21$Dict$Dart.prototype.getRandomWord$member.call(this, size);
+}
+;
 function unnamedad7b21$GameField$Dart(){
 }
 unnamedad7b21$GameField$Dart.$lookupRTT = function(){
   return RTT.create($cls('unnamedad7b21$GameField$Dart'));
 }
 ;
-unnamedad7b21$GameField$Dart.$Constructor = function(){
+unnamedad7b21$GameField$Dart.$Constructor = function(size){
   var tmp$1, tmp$0;
   this.cells$setter(tmp$0 = RTT.setTypeInfo([], Array.$lookupRTT())) , tmp$0;
   this.selList$setter(tmp$1 = RTT.setTypeInfo([], Array.$lookupRTT())) , tmp$1;
 }
 ;
-unnamedad7b21$GameField$Dart.$Initializer = function(){
-  this.size$field = 5;
+unnamedad7b21$GameField$Dart.$Initializer = function(size){
   this._fieldFull$unnamedad7b21$$field_ = false;
   this.selStarted$field = false;
+  this.size$field = size;
 }
 ;
-unnamedad7b21$GameField$Dart.GameField$$Factory = function(){
+unnamedad7b21$GameField$Dart.GameField$$Factory = function(size){
   var tmp$0 = new unnamedad7b21$GameField$Dart;
   tmp$0.$typeInfo = unnamedad7b21$GameField$Dart.$lookupRTT();
-  unnamedad7b21$GameField$Dart.$Initializer.call(tmp$0);
-  unnamedad7b21$GameField$Dart.$Constructor.call(tmp$0);
+  unnamedad7b21$GameField$Dart.$Initializer.call(tmp$0, size);
+  unnamedad7b21$GameField$Dart.$Constructor.call(tmp$0, size);
   return tmp$0;
 }
 ;
@@ -65435,7 +65546,7 @@ unnamedad7b21$blockhead$Dart.$lookupRTT = function(){
 ;
 unnamedad7b21$blockhead$Dart.$Constructor = function(){
   var tmp$5, tmp$1, tmp$2, tmp$3, tmp$4, tmp$0;
-  this.table$setter(tmp$0 = unnamedad7b21$GameField$Dart.GameField$$Factory()) , tmp$0;
+  this.table$setter(tmp$0 = unnamedad7b21$GameField$Dart.GameField$$Factory(this.size$getter())) , tmp$0;
   this.players$setter(tmp$1 = ListFactory$Dart.List$$Factory(null, $Dart$Null)) , tmp$1;
   this.players$getter().add$named(1, $noargs, unnamedad7b21$Player$Dart.Player$$Factory('#player1', 'Player 1'));
   this.players$getter().add$named(1, $noargs, unnamedad7b21$Player$Dart.Player$$Factory('#player2', 'Player 2'));
@@ -65447,6 +65558,7 @@ unnamedad7b21$blockhead$Dart.$Constructor = function(){
 }
 ;
 unnamedad7b21$blockhead$Dart.$Initializer = function(){
+  this.size$field = 5;
   this.currentPlayerIdx$field = negate$operator(1);
 }
 ;
@@ -65456,6 +65568,10 @@ unnamedad7b21$blockhead$Dart.blockhead$$Factory = function(){
   unnamedad7b21$blockhead$Dart.$Initializer.call(tmp$0);
   unnamedad7b21$blockhead$Dart.$Constructor.call(tmp$0);
   return tmp$0;
+}
+;
+unnamedad7b21$blockhead$Dart.prototype.size$getter = function(){
+  return 5;
 }
 ;
 unnamedad7b21$blockhead$Dart.prototype.dict$getter = function(){
@@ -65572,7 +65688,7 @@ unnamedad7b21$blockhead$Dart.prototype.analyzeTurn$named_$lookupRTT = function()
 ;
 unnamedad7b21$blockhead$Dart.prototype.startGame$member = function(){
   var tmp$0;
-  this.startWord$setter(tmp$0 = '\u0431\u0430\u043B\u0434\u0430') , tmp$0;
+  this.startWord$setter(tmp$0 = this.dict$getter().getRandomWord$named(1, $noargs, this.size$getter())) , tmp$0;
   this.table$getter().reset$named(1, $noargs, this.startWord$getter());
   this._nextPlayer$unnamedad7b21$$member_(negate$operator(1));
   this.table$getter().makeTurn$named(0, $noargs);
@@ -65611,7 +65727,7 @@ unnamedad7b21$blockhead$Dart.prototype.finishGame$member = function(){
   this.players$getter().forEach$named(1, $noargs, $bind(unnamedad7b21$blockhead$Dart$finishGame$c0$28_28$Hoisted$named, unnamedad7b21$blockhead$Dart$finishGame$c0$28_28$Hoisted$named$named_$lookupRTT, $Dart$Null, dartc_scp$1));
   htmld071c1$window$getter().alert$named(1, $noargs, '\u041F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u044C - ' + $toString(dartc_scp$1.winner.name$getter()) + ' \u0441 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u043E\u043C ' + $toString(dartc_scp$1.maxScore) + '');
   if (htmld071c1$window$getter().confirm$named(1, $noargs, '\u0418\u0433\u0440\u0430\u0435\u043C \u0435\u0449\u0435 \u0440\u0430\u0437?')) {
-    this.startWord$setter(tmp$0 = '\u0431\u043E\u043B\u0434\u043E') , tmp$0;
+    this.startWord$setter(tmp$0 = this.dict$getter().getRandomWord$named(1, $noargs, this.size$getter())) , tmp$0;
     this.table$getter().reset$named(1, $noargs, this.startWord$getter());
     this._nextPlayer$unnamedad7b21$$member_(0);
     this.table$getter().makeTurn$named(0, $noargs);
@@ -65710,7 +65826,6 @@ isolate$inits.push(function(){
 }
 );
 isolate$inits.push(function(){
-  this.size$field = 5;
   this._fieldFull$unnamedad7b21$$field_ = false;
   this.selStarted$field = false;
 }

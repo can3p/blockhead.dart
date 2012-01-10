@@ -72,4 +72,13 @@ class Dict {
   bool _isCorrectString(String word) {
     return !(new RegExp('[^а-я]', ignoreCase: true).hasMatch(word));
   }
+  
+  String getRandomWord(int size) {
+    var filter = (word) => word.length == size;
+    List<String> filtered = words.filter(filter);
+    List<String> userFiltered =  userWords.filter(filter);
+
+    filtered.addAll(userFiltered);
+    return filtered[ (Math.random() * (filtered.length - 1)).floor().toInt() ];
+  }
 }

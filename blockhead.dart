@@ -7,14 +7,15 @@
 #resource('style.css');
 
 class blockhead {
+  final int size = 5;
   Dict dict;
   GameField table;
   List<Player> players; 
   int currentPlayerIdx = -1;
   String startWord;
 
-  blockhead() { 
-    table = new GameField();
+  blockhead() {
+    table = new GameField(size);
     players = new List();
     players.add( new Player('#player1', 'Player 1') );
     players.add( new Player('#player2', 'Player 2') );
@@ -67,7 +68,7 @@ class blockhead {
   }
     
   void startGame() {
-    startWord = 'балда';
+    startWord = dict.getRandomWord(size);
     
     table.reset(startWord);
     _nextPlayer();
@@ -88,7 +89,7 @@ class blockhead {
     
     window.alert('Победитель - ${winner.name} с результатом ${maxScore}');
     if (window.confirm('Играем еще раз?')) {
-      startWord = 'болдо';
+      startWord = dict.getRandomWord(size);
       
       table.reset(startWord);
       _nextPlayer(0);

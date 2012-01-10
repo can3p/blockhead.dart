@@ -65,7 +65,8 @@ body {
 
 .player-scorelist {
 	float: left;
-	margin-left: 10%;
+	margin-left: 8%;
+	margin-right: 8%;
 	width: 300px;
 }
 

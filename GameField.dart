@@ -4,7 +4,7 @@ class GameField {
   static final String STATE_SELECTWORD = 'selectword';
   static final String STATE_ENDTURN = 'endturn';
 
-  int size = 5;
+  int size;
   String _state;
   bool _fieldFull = false;
   DivElement container;
@@ -19,10 +19,9 @@ class GameField {
   var _onEnterWord;
   var _onFieldFull;
   
-  GameField() {
+  GameField(this.size) {
     cells = [];
-    selList = [];
-    
+    selList = [];   
   }
   
   void set onEnterWord(void callback(String word)) {
