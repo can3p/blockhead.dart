@@ -1,6 +1,7 @@
 #import('dart:html');
 #source('GameField.dart');
 #source('Player.dart');
+#source('XHR.dart');
 #resource('style.css');
 
 class blockhead {
@@ -9,6 +10,8 @@ class blockhead {
   int currentPlayerIdx = 0;
 
   blockhead() { 
+    new XHR('dict').success((String response) => window.console.log(response));
+
     table = new GameField(); 
     players = new List();
     players.add( new Player('#player1', 'Player 1') );
