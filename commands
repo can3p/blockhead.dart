@@ -1,0 +1,13 @@
+myspell commands:
+
+:g/\/A/d
+:g/\/K/d
+:g/\/BLPW/d
+:g/\/BLMR/d
+:g/\/LQTU/d
+:g/\/BMLP/d  
+:g/\/L/d
+:g/\/BLMP/d 
+:g/\/BLMR/d  
+:g/\/./t$
+:%s/\/.//g
