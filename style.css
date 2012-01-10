@@ -2,6 +2,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.field-wrapper {
+	float: left;
+}
+
 .field-container {
 	overflow: hidden;
 }
@@ -57,4 +61,32 @@ body {
 
 .container-selectword .field-selectedword {
 	display: block;
+}
+
+.player-scorelist {
+	float: left;
+	margin-left: 10%;
+	width: 300px;
+}
+
+.player-myturn .player-name {
+	font-weight: bold;
+}
+
+.player-noscore-message, .player-overall {
+	margin-top: 20px;
+	border-top: 1px solid #888;
+	padding-top: 5px;
+}
+
+.player-noscore-message {
+	display: none;
+}
+
+.player-noscore .player-noscore-message {
+	display: block;
+}
+
+.player-noscore .player-overall {
+	display: none;
 }

@@ -4,8 +4,9 @@ class GameField {
   static final String STATE_SELECTWORD = 'selectword';
   static final String STATE_ENDTURN = 'endturn';
 
-  var size = 5;
-  var _state;
+  int size = 5;
+  String _state;
+  bool _fieldFull = false;
   DivElement container;
   DivElement selectedWord;
   
@@ -24,8 +25,13 @@ class GameField {
     
   }
   
-  void set onEnterWord(void callback(String word)) => _onEnterWord = callback;
-  void set onFieldFull(void callback()) => _onFieldFull = callback;
+  void set onEnterWord(void callback(String word)) {
+    _onEnterWord = callback;
+  }
+  
+  void set onFieldFull(void callback()) {
+    _onFieldFull = callback;
+  }
   
   void set state(String state) {
     container.classes.remove('container-${_state}');
@@ -55,6 +61,7 @@ class GameField {
       clearTable();
     }
     
+    _fieldFull = false;
     state = STATE_INITIAL;
     setInitialWord(word);
   }
@@ -194,23 +201,34 @@ class GameField {
   }
   
   void makeTurn() {
+    if (_fieldFull) {
+//       _onFieldFull();
+      return;
+    }
+
     state = STATE_ADDLETTER;
   }
   
   void dragStart(cell) {
     if (cell.innerHTML.length == 0) {
-        if (state == STATE_ADDLETTER || state == STATE_SELECTWORD) {
-          String newLetter = window.prompt('Введите букву, которая должна появиться в поле', '');
-          if(newLetter.length == 0 || newLetter.length > 1) { return; }
-          var coords = _getCellCoords(cell);
-          if (coords.isEmpty()) { return; }
-          if (!cell.classes.contains('field-hoverable')) { return; }
-          
-          putLetter(coords['x'], coords['y'], newLetter, true);
-          state = STATE_SELECTWORD;
+      if (!cell.classes.contains('field-hoverable')) { return; }
+      if (state == STATE_ADDLETTER || state == STATE_SELECTWORD) {
+        String newLetter = window.prompt('Введите букву, которая должна появиться в поле', '');
+        if(newLetter == null || newLetter.length == 0 || newLetter.length > 1) { return; }
+        newLetter = newLetter.toLowerCase();
+        if (new RegExp('[^а-я]', ignoreCase: true).hasMatch(newLetter)) {
+          window.alert('Для ввода допускается только кириллица');
+          return;
         }
+        var coords = _getCellCoords(cell);
+        if (coords.isEmpty()) { return; }
+        
+        
+        putLetter(coords['x'], coords['y'], newLetter, true);
+        state = STATE_SELECTWORD;
+      }
 
-        return;
+      return;
     }
     
     if (state != STATE_SELECTWORD) { return; }
@@ -274,6 +292,11 @@ class GameField {
       newLetterCell.classes.remove('field-new');
       newLetterCell = null;
       _recalcAccessible();
+      
+      if (cells.every( (el) => el.innerHTML.length > 0 )) {
+        _fieldFull = true;
+        _onFieldFull();
+      }
     }
   }
   
