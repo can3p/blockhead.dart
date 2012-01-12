@@ -1,13 +1,31 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	width: 950px;
+	margin: 0 auto;
+}
+
+.game-wrapper-outer {
+	display: table;
+	width: 100%;
+}
+
+.game-wrapper-inner {
+	display: table-row;
+}
+
+.game-wrapper-inner > div {
+	display: table-cell;
+	vertical-align: top;
 }
 
 .field-wrapper {
-	float: left;
+	text-align: center;
+	width: 40%;
 }
 
 .field-container {
 	overflow: hidden;
+	display: inline-block;
 }
 
 .field-cell {
@@ -60,14 +78,11 @@ body {
 }
 
 .container-selectword .field-selectedword {
-	display: block;
+	display: inline-block;
 }
 
 .player-scorelist {
-	float: left;
-	margin-left: 8%;
-	margin-right: 8%;
-	width: 300px;
+
 }
 
 .player-myturn .player-name {
