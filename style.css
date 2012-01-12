@@ -4,6 +4,12 @@ body {
 	margin: 0 auto;
 }
 
+.game-countdown {
+	text-align: center;
+	font-size: 2em;
+	color: #e00;
+}
+
 .game-wrapper-outer {
 	display: table;
 	width: 100%;

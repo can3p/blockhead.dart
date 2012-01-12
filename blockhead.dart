@@ -4,12 +4,15 @@
 #source('Player.dart');
 #source('XHR.dart');
 #source('Dict.dart');
+#source('Countdown.dart');
 #resource('style.css');
 
 class blockhead {
   final int size = 5;
+  final int roundTime = 60;
   Dict dict;
   GameField table;
+  Countdown countdown;
   List<Player> players; 
   int currentPlayerIdx = -1;
   String startWord;
@@ -23,6 +26,9 @@ class blockhead {
     table.onEnterWord = analyzeTurn;
     table.onFieldFull = finishGame;
     
+    countdown = new Countdown(document.body.query('#countdown'), roundTime);
+    countdown.onEndCount = _nextPlayer;
+   
     dict = new Dict();
     dict.onReady = startGame;
     dict.init();
@@ -35,6 +41,7 @@ class blockhead {
 
     currentPlayerIdx = ( idx >= 0 ) ? idx : (currentPlayerIdx + 1) % players.length;
     players[currentPlayerIdx].onStartTurn();
+    countdown.restart();   
   }
   
   void analyzeTurn(String word) {
@@ -73,11 +80,14 @@ class blockhead {
     table.reset(startWord);
     _nextPlayer();
     table.makeTurn();
+    countdown.start();
   }
   
   void finishGame() {
     int maxScore = 0;
     Player winner;
+    
+    countdown.reset();
     
     players.forEach((p) {
       int score = p.calcScore();
