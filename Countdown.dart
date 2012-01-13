@@ -1,6 +1,6 @@
 class Countdown {
   
-  var _timer;
+  int _timer;
   
   var _onEndCount;
   int _roundTime;
@@ -21,14 +21,14 @@ class Countdown {
     
     if(_count == 0) {
       _onEndCount();
-      window.clearInterval(_timer);
+    } else {
+      _timer = window.setTimeout(_tick, 1000);
     }
   }
   
   void start() {
     _count = _roundTime + 1;
     _tick();
-    _timer = window.setInterval(_tick, 1000);
   }
   
   void restart() {
@@ -37,7 +37,10 @@ class Countdown {
   }
   
   void reset() {
-    window.clearInterval(_timer);
+    if(_timer != null) {
+      window.clearTimeout(_timer);
+    }
+    
     _node.innerHTML = _roundTime.toString();
   }
 
