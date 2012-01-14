@@ -38,10 +38,11 @@ class blockhead {
     if (currentPlayerIdx >= 0) {
       players[currentPlayerIdx].onEndTurn();
     }
+    
+    countdown.restart();
 
     currentPlayerIdx = ( idx >= 0 ) ? idx : (currentPlayerIdx + 1) % players.length;
-    players[currentPlayerIdx].onStartTurn();
-    countdown.restart();   
+    players[currentPlayerIdx].onStartTurn();   
   }
   
   void analyzeTurn(String word) {
@@ -67,9 +68,7 @@ class blockhead {
     if (approve) {
       table.applyWord(); 
       players[currentPlayerIdx].addWord(word);
-      players[currentPlayerIdx].onEndTurn();
-      currentPlayerIdx = (currentPlayerIdx + 1) % players.length;
-      players[currentPlayerIdx].onStartTurn();
+      _nextPlayer();
     }
     table.makeTurn();
   }
@@ -77,10 +76,9 @@ class blockhead {
   void startGame() {
     startWord = dict.getRandomWord(size);
     
-    table.reset(startWord);
     _nextPlayer();
+    table.reset(startWord);
     table.makeTurn();
-    countdown.start();
   }
   
   void finishGame() {
