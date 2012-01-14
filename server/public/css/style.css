@@ -1,0 +1,115 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	width: 950px;
+	margin: 0 auto;
+}
+
+.game-countdown {
+	text-align: center;
+	font-size: 2em;
+	color: #e00;
+}
+
+.game-wrapper-outer {
+	display: table;
+	width: 100%;
+}
+
+.game-wrapper-inner {
+	display: table-row;
+}
+
+.game-wrapper-inner > div {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.field-wrapper {
+	text-align: center;
+	width: 40%;
+}
+
+.field-container {
+	overflow: hidden;
+	display: inline-block;
+}
+
+.field-cell {
+	border: 1px solid #444;
+	margin: 1px;
+	width: 48px;
+	height: 48px;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	font-size: 50px;
+	font-variant: small-caps;
+	cursor: pointer;
+}
+
+.field-hoverable:hover {
+	background-color: #ece2ff;
+}
+
+.field-selected {
+	background-color: #ffd5d5 !important;
+}
+
+.field-new {
+	color: #F00 !important;
+	border-color: #F00 !important;
+}
+
+.field-cell-newrow {
+	clear: left;
+}
+
+.field-selectedword {
+	display: none;
+	text-align: center;
+	line-height: 40px;
+	font-size: 50px;
+	width: 250px;
+	color: #4fe05b;
+	font-variant: small-caps;
+	margin-top: 15px;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.field-selectedword-incorrect {
+	color: #F00;
+	cursor: default;
+	text-decoration: none;
+}
+
+.container-selectword .field-selectedword {
+	display: inline-block;
+}
+
+.player-scorelist {
+
+}
+
+.player-myturn .player-name {
+	font-weight: bold;
+}
+
+.player-noscore-message, .player-overall {
+	margin-top: 20px;
+	border-top: 1px solid #888;
+	padding-top: 5px;
+}
+
+.player-noscore-message {
+	display: none;
+}
+
+.player-noscore .player-noscore-message {
+	display: block;
+}
+
+.player-noscore .player-overall {
+	display: none;
+}
+

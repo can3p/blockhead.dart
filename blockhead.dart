@@ -18,10 +18,10 @@ class blockhead {
   String startWord;
 
   blockhead() {
-    table = new GameField(size);
-    players = new List();
+    players = new List(); 
     players.add( new Player('#player1', 'Player 1') );
     players.add( new Player('#player2', 'Player 2') );
+    table = new GameField(size);
     
     table.onEnterWord = analyzeTurn;
     table.onFieldFull = finishGame;

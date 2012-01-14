@@ -20,8 +20,8 @@ class GameField {
   var _onFieldFull;
   
   GameField(this.size) {
-    cells = [];
-    selList = [];   
+    cells = new List();
+    selList = new List();   
   }
   
   void set onEnterWord(void callback(String word)) {
