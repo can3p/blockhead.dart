@@ -5,6 +5,7 @@
 #source('XHR.dart');
 #source('Dict.dart');
 #source('Countdown.dart');
+#source('JSBridge.dart');
 #resource('style.css');
 
 class blockhead {
@@ -32,6 +33,12 @@ class blockhead {
     dict = new Dict();
     dict.onReady = startGame;
     dict.init();
+    
+    JSBridge bridge = new JSBridge();
+    bridge.addListener('some', (args) {
+      window.console.log(args);
+    });
+    bridge.rpcCall('init');
   }
     
   void _nextPlayer([num idx = -1]) {

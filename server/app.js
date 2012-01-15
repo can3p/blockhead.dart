@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -6,10 +5,15 @@ var express = require('express'),
     mongoose = require('mongoose'),
     registry = require('./lib/registry.js');
 
-var app = module.exports = express.createServer();
-//   , db = mongoose.createConnection('mongodb://localhost/jsnotes');
+var app = module.exports = express.createServer()
+  , io = require('socket.io').listen(app);
 
-// registry.set('db', db);
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
 
 app.helpers(require('./views/helpers/static'));
 app.dynamicHelpers(require('./views/helpers/dynamic'));
