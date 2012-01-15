@@ -35,10 +35,10 @@ class blockhead {
     dict.init();
     
     JSBridge bridge = new JSBridge();
-    bridge.addListener('some', (args) {
-      window.console.log(args);
+    bridge.addListener('packet', ([List args = new List()]) {
+      args.forEach((arg) => window.console.log(arg));
     });
-    bridge.rpcCall('init');
+    bridge.rpcCall('init', [ 'some', 'params', 1, 2]); 
   }
     
   void _nextPlayer([num idx = -1]) {

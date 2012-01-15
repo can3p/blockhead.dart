@@ -7665,6 +7665,13 @@ function native__IDBObjectStoreWrappingImplementation__clear(_this) {
     throw __dom_wrap_exception(e);
   }
 }
+function native__IDBObjectStoreWrappingImplementation__index(_this, name) {
+  try {
+    return __dom_wrap(_this.$dom.index(__dom_unwrap(name)));
+  } catch (e) {
+    throw __dom_wrap_exception(e);
+  }
+}
 function native__IDBRequestWrappingImplementation__get_readyState(_this) {
   try {
     return __dom_wrap(_this.$dom.readyState);
@@ -21013,6 +21020,18 @@ _CanvasPixelArrayWrappingImplementation$Dart._index$$member_ = function(_this, i
   return native__CanvasPixelArrayWrappingImplementation__index(_this, index);
 }
 ;
+_CanvasPixelArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _CanvasPixelArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_CanvasPixelArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _CanvasPixelArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _CanvasPixelArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _CanvasPixelArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   return _CanvasPixelArrayWrappingImplementation$Dart._set_index$$member_(this, index, value);
 }
@@ -25334,6 +25353,18 @@ _Float32ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index
   return native__Float32ArrayWrappingImplementation__index(_this, index);
 }
 ;
+_Float32ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Float32ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Float32ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Float32ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Float32ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _Float32ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   return _Float32ArrayWrappingImplementation$Dart._set_index$$member_(this, index, value);
 }
@@ -25558,6 +25589,18 @@ _Float64ArrayWrappingImplementation$Dart.prototype.INDEX$operator = function(ind
 ;
 _Float64ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__Float64ArrayWrappingImplementation__index(_this, index);
+}
+;
+_Float64ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Float64ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Float64ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Float64ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Float64ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _Float64ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -25941,6 +25984,18 @@ _HTMLCollectionWrappingImplementation$Dart.prototype.INDEX$operator = function(i
 ;
 _HTMLCollectionWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__HTMLCollectionWrappingImplementation__index(_this, index);
+}
+;
+_HTMLCollectionWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _HTMLCollectionWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_HTMLCollectionWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _HTMLCollectionWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _HTMLCollectionWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _HTMLCollectionWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -27125,6 +27180,22 @@ _IDBObjectStoreWrappingImplementation$Dart._clear$$member_ = function(receiver){
   return native__IDBObjectStoreWrappingImplementation__clear(receiver);
 }
 ;
+_IDBObjectStoreWrappingImplementation$Dart._index$$member_ = function(receiver, name_0){
+  return native__IDBObjectStoreWrappingImplementation__index(receiver, name_0);
+}
+;
+_IDBObjectStoreWrappingImplementation$Dart._index$$named_ = function($n, $o, receiver, name_0){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _IDBObjectStoreWrappingImplementation$Dart._index$$member_(receiver, name_0);
+}
+;
+_IDBObjectStoreWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _IDBObjectStoreWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _IDBObjectStoreWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _IDBObjectStoreWrappingImplementation$Dart.prototype.typeName$getter = function(){
   return 'IDBObjectStore';
 }
@@ -27650,6 +27721,18 @@ _Int16ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__Int16ArrayWrappingImplementation__index(_this, index);
 }
 ;
+_Int16ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Int16ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Int16ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Int16ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Int16ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _Int16ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   return _Int16ArrayWrappingImplementation$Dart._set_index$$member_(this, index, value);
 }
@@ -27876,6 +27959,18 @@ _Int32ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__Int32ArrayWrappingImplementation__index(_this, index);
 }
 ;
+_Int32ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Int32ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Int32ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Int32ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Int32ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _Int32ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   return _Int32ArrayWrappingImplementation$Dart._set_index$$member_(this, index, value);
 }
@@ -28100,6 +28195,18 @@ _Int8ArrayWrappingImplementation$Dart.prototype.INDEX$operator = function(index)
 ;
 _Int8ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__Int8ArrayWrappingImplementation__index(_this, index);
+}
+;
+_Int8ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Int8ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Int8ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Int8ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Int8ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _Int8ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -28717,6 +28824,18 @@ _MediaListWrappingImplementation$Dart.prototype.INDEX$operator = function(index)
 ;
 _MediaListWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__MediaListWrappingImplementation__index(_this, index);
+}
+;
+_MediaListWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _MediaListWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_MediaListWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _MediaListWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _MediaListWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _MediaListWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -29552,6 +29671,18 @@ _NamedNodeMapWrappingImplementation$Dart._index$$member_ = function(_this, index
   return native__NamedNodeMapWrappingImplementation__index(_this, index);
 }
 ;
+_NamedNodeMapWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _NamedNodeMapWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_NamedNodeMapWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _NamedNodeMapWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _NamedNodeMapWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _NamedNodeMapWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   $Dart$ThrowException(UnsupportedOperationException$Dart.UnsupportedOperationException$$Factory('Cannot assign element of immutable List.'));
 }
@@ -29933,6 +30064,18 @@ _NodeListWrappingImplementation$Dart.prototype.INDEX$operator = function(index){
 ;
 _NodeListWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__NodeListWrappingImplementation__index(_this, index);
+}
+;
+_NodeListWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _NodeListWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_NodeListWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _NodeListWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _NodeListWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _NodeListWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -44671,6 +44814,18 @@ _StyleSheetListWrappingImplementation$Dart._index$$member_ = function(_this, ind
   return native__StyleSheetListWrappingImplementation__index(_this, index);
 }
 ;
+_StyleSheetListWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _StyleSheetListWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_StyleSheetListWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _StyleSheetListWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _StyleSheetListWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _StyleSheetListWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   $Dart$ThrowException(UnsupportedOperationException$Dart.UnsupportedOperationException$$Factory('Cannot assign element of immutable List.'));
 }
@@ -45625,6 +45780,18 @@ _TouchListWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__TouchListWrappingImplementation__index(_this, index);
 }
 ;
+_TouchListWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _TouchListWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_TouchListWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _TouchListWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _TouchListWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _TouchListWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   $Dart$ThrowException(UnsupportedOperationException$Dart.UnsupportedOperationException$$Factory('Cannot assign element of immutable List.'));
 }
@@ -46413,6 +46580,18 @@ _Uint16ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index)
   return native__Uint16ArrayWrappingImplementation__index(_this, index);
 }
 ;
+_Uint16ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Uint16ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Uint16ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Uint16ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Uint16ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
+}
+;
 _Uint16ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
   return _Uint16ArrayWrappingImplementation$Dart._set_index$$member_(this, index, value);
 }
@@ -46637,6 +46816,18 @@ _Uint32ArrayWrappingImplementation$Dart.prototype.INDEX$operator = function(inde
 ;
 _Uint32ArrayWrappingImplementation$Dart._index$$member_ = function(_this, index){
   return native__Uint32ArrayWrappingImplementation__index(_this, index);
+}
+;
+_Uint32ArrayWrappingImplementation$Dart._index$$named_ = function($n, $o, _this, index){
+  if ($o.count || $n != 2)
+    $nsme();
+  return _Uint32ArrayWrappingImplementation$Dart._index$$member_(_this, index);
+}
+;
+_Uint32ArrayWrappingImplementation$Dart._index$$getter_ = function(){
+  var ret = _Uint32ArrayWrappingImplementation$Dart._index$$named_;
+  ret.$lookupRTT = _Uint32ArrayWrappingImplementation$Dart._index$$named__$lookupRTT;
+  return ret;
 }
 ;
 _Uint32ArrayWrappingImplementation$Dart.prototype.ASSIGN_INDEX$operator = function(index, value){
@@ -67310,30 +67501,28 @@ unnamedeaeddb$JSBridge$Dart.prototype.rpcCall$named = function($n, $o, name_0, a
   return unnamedeaeddb$JSBridge$Dart.prototype.rpcCall$member.call(this, name_0, args);
 }
 ;
-function unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted(fun){
-  return fun(0, $noargs);
+function unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted(dartc_scp$1, fun){
+  return fun(1, $noargs, dartc_scp$1.message.INDEX$operator('args'));
 }
-function unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named($n, $o, fun){
+function unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named($s0, $n, $o, fun){
   if ($o.count || $n != 1)
     $nsme();
-  return unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted(fun);
+  return unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted($s0, fun);
 }
 function unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named$named_$lookupRTT(){
-  return RTT.createFunction([RTT.dynamicType.$lookupRTT()], RTT.dynamicType.$lookupRTT());
+  return RTT.createFunction([RTT.createFunction(null, RTT.dynamicType.$lookupRTT())], RTT.dynamicType.$lookupRTT());
 }
 unnamedeaeddb$JSBridge$Dart.prototype.processMessage$member = function(ev){
-  var message = jsonc5ef24$JSON$Dart.parse$member(ev.data$getter());
-  var name_0 = message.INDEX$operator('name');
-  if (NE$operator(message.INDEX$operator('sender'), 'dart')) {
+  var dartc_scp$1;
+  dartc_scp$1 = {};
+  dartc_scp$1.message = jsonc5ef24$JSON$Dart.parse$member(ev.data$getter());
+  var name_0 = dartc_scp$1.message.INDEX$operator('name');
+  if (NE$operator(dartc_scp$1.message.INDEX$operator('sender'), 'dart')) {
     if (this._callbacks$unnamedeaeddb$$getter_().containsKey$named(1, $noargs, name_0)) {
-      htmld071c1$window$getter().console$getter().log$named(1, $noargs, ADD$operator('found method method: ', name_0));
-      this._callbacks$unnamedeaeddb$$getter_().INDEX$operator(name_0).INDEX$operator(0)(0, $noargs);
-      this._callbacks$unnamedeaeddb$$getter_().INDEX$operator(name_0).forEach$named(1, $noargs, $bind(unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named, unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named$named_$lookupRTT, $Dart$Null));
-    }
-     else {
-      htmld071c1$window$getter().console$getter().log$named(1, $noargs, ADD$operator('no such method: ', name_0));
+      this._callbacks$unnamedeaeddb$$getter_().INDEX$operator(name_0).forEach$named(1, $noargs, $bind(unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named, unnamedeaeddb$JSBridge$Dart$processMessage$c0$27_27$Hoisted$named$named_$lookupRTT, $Dart$Null, dartc_scp$1));
     }
   }
+  dartc_scp$1 = $Dart$Null;
 }
 ;
 unnamedeaeddb$JSBridge$Dart.prototype.processMessage$named = function($n, $o, ev){
@@ -67352,9 +67541,6 @@ unnamedeaeddb$JSBridge$Dart.prototype.addListener$member = function(name_0, call
     this._callbacks$unnamedeaeddb$$getter_().ASSIGN_INDEX$operator(name_0, tmp$0 = ListFactory$Dart.List$$Factory(null, $Dart$Null)) , tmp$0;
   }
   this._callbacks$unnamedeaeddb$$getter_().INDEX$operator(name_0).add$named(1, $noargs, callback);
-  var args = ListFactory$Dart.List$$Factory(null, $Dart$Null);
-  args.add$named(1, $noargs, 'kkkk');
-  callback(1, $noargs, args);
 }
 ;
 unnamedeaeddb$JSBridge$Dart.prototype.addListener$named = function($n, $o, name_0, callback){
@@ -67661,16 +67847,33 @@ unnamedeaeddb$blockhead$Dart.$lookupRTT = function(typeArgs, named){
   return RTT.create($cls('unnamedeaeddb$blockhead$Dart'), null, null, named);
 }
 ;
-function unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor(args){
-  htmld071c1$window$getter().console$getter().log$named(1, $noargs, args);
+function unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor(arg){
+  return htmld071c1$window$getter().console$getter().log$named(1, $noargs, arg);
 }
-function unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named($n, $o, args){
+function unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named($n, $o, arg){
   if ($o.count || $n != 1)
     $nsme();
-  return unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor.call(this, args);
+  return unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor.call(this, arg);
 }
 function unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named$named_$lookupRTT(){
   return RTT.createFunction([RTT.dynamicType.$lookupRTT()], RTT.dynamicType.$lookupRTT());
+}
+function unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor(args){
+  args.forEach$named(1, $noargs, $bind(unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named, unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named$named_$lookupRTT, this));
+}
+function unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor$named($n, $o, args){
+  var seen = 0;
+  var def = 0;
+  switch ($n) {
+    case 0:
+      args = '$p_args' in $o?(++seen , $o.$p_args):(++def , ListFactory$Dart.List$$Factory(null, $Dart$Null));
+  }
+  if (seen != $o.count || seen + def + $n != 1)
+    $nsme();
+  return unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor.call(this, args);
+}
+function unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor$named$named_$lookupRTT(){
+  return RTT.createFunction([List$Dart.$lookupRTT(null, 'args')], RTT.dynamicType.$lookupRTT());
 }
 unnamedeaeddb$blockhead$Dart.$Constructor = function(){
   var tmp$5, tmp$6, tmp$7, tmp$1, tmp$2, tmp$3, tmp$4, tmp$0;
@@ -67686,8 +67889,8 @@ unnamedeaeddb$blockhead$Dart.$Constructor = function(){
   this.dict$getter().onReady$setter(tmp$7 = $bind(unnamedeaeddb$blockhead$Dart.prototype.startGame$named, unnamedeaeddb$blockhead$Dart.prototype.startGame$named_$lookupRTT, this)) , tmp$7;
   this.dict$getter().init$named(0, $noargs);
   var bridge = unnamedeaeddb$JSBridge$Dart.JSBridge$$Factory();
-  bridge.addListener$named(2, $noargs, 'some', $bind(unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named, unnamedeaeddb$blockhead$Dart$$c0$28_28$HoistedConstructor$named$named_$lookupRTT, this));
-  bridge.rpcCall$named(1, $noargs, 'init');
+  bridge.addListener$named(2, $noargs, 'packet', $bind(unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor$named, unnamedeaeddb$blockhead$Dart$$c1$28_28$HoistedConstructor$named$named_$lookupRTT, this));
+  bridge.rpcCall$named(2, $noargs, 'init', RTT.setTypeInfo(['some', 'params', 1, 2], Array.$lookupRTT()));
 }
 ;
 unnamedeaeddb$blockhead$Dart.$Initializer = function(){

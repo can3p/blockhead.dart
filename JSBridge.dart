@@ -25,13 +25,10 @@ class JSBridge {
   void processMessage(ev) {
     Map<String, String> message = JSON.parse(ev.data);
     String name = message['name'];
+
     if (message['sender'] != 'dart') {
       if(_callbacks.containsKey(name)) {
-        window.console.log('found method method: ' + name);
-        _callbacks[name][0]();
-        _callbacks[name].forEach((fun) => fun());
-      } else {
-        window.console.log('no such method: ' + name);
+        _callbacks[name].forEach((void fun([List args])) => fun(message['args']));
       }
     }
   }
@@ -42,9 +39,5 @@ class JSBridge {
     }
     
     _callbacks[name].add(callback);
-    List args = new List();
-    
-    args.add('kkkk');
-    callback(args);
   }
 }
