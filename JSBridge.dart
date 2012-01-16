@@ -9,7 +9,7 @@ class JSBridge {
   }
   
   void rpcCall(String name, [List args]) {
-    if (args = null) {
+    if (args == null) {
       args = [];
     }
     var message = {
